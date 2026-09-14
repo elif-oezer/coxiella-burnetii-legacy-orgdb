@@ -26,7 +26,7 @@ gene identifiers is planned.
 
 ## Repository structure
 
-
+```
 .
 ├── data/                      # input files and provenance documentation
 ├── output/                    # generated files (gitignored)
@@ -34,7 +34,7 @@ gene identifiers is planned.
 ├── .gitignore
 └── README.md
 
-
+````
 
 ## Workflow
 
