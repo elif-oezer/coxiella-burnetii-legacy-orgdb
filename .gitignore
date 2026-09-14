@@ -1,0 +1,39 @@
+#Generated pipeline outputs
+output/
+
+# Generated OrgDb package
+org.*.eg.db/
+
+#input files
+#downloaded/locally generated biological input files
+data/*
+!data/README.md
+
+#R session files
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+
+#OS/editor files
+.DS_Store
+Thumbs.db
+*~
+*.swp
+*.swo
+
+#Generated package
+*.tar.gz
+*.zip
+*.Rcheck/
+
+#Root-level intermediate SQLite database
+/org.Cburnetii.eg.sqlite
+
+#Temp/build directories
+build/
+tmp/
+temp/
+
+#Logs
+*.log
