@@ -8,6 +8,21 @@ assembly `GCA_002094935.1 / ASM209493v1`.
 The resulting package can be used with Bioconductor tools such as 
 `clusterProfiler` for over-representation analysis (ORA) and gene set enrichment analysis (GSEA).
 
+## Compatibility
+
+This OrgDb package is intended for analyses based on the legacy
+*Coxiella burnetii* genome annotation and its historical locus-tag
+identifier namespace.
+
+The package uses the historical locus tag as the primary gene identifier
+(`GID`) because the corresponding RefSeq Gene Ontology annotations are
+keyed to this namespace.
+
+It should not be assumed to be compatible with gene identifiers from
+newer annotation releases.
+
+A separate OrgDb package for the current genome annotation and current
+gene identifiers is planned.
 
 ## Repository structure
 
@@ -38,12 +53,18 @@ Use in downstream enrichment analysis
 
 
 ## Input
+## Reference annotation
 
-The workflow uses:
+Genome annotation:
+- `GCF_002094935.1_ASM209493v1_genomic.gff`
 
-genome annotation for assembly GCA_002094935.1 / ASM209493v1
-GO annotations derived from
-GCF_002094935.1_ASM209493v1_gene_ontology.gaf
+Gene Ontology annotation:
+- `GCF_002094935.1_ASM209493v1_gene_ontology.gaf`
+
+Primary OrgDb identifier:
+- historical locus tag (`old_locus_tag` in the GFF)
+
+Current locus tags are retained as secondary annotation metadata.
 
 Input provenance and download details are documented in
 data/README.md.
