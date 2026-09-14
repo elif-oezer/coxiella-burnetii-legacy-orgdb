@@ -26,13 +26,14 @@ gene identifiers is planned.
 
 ## Repository structure
 
-```text
+
 .
 ├── data/                      # input files and provenance documentation
 ├── output/                    # generated files (gitignored)
 ├── scripts/                   # package build workflow
 ├── .gitignore
 └── README.md
+
 
 
 ## Workflow
@@ -78,4 +79,4 @@ release of the OrgDb construction workflow.
 
 A license will be added before the first public release.
 
-```text
+
