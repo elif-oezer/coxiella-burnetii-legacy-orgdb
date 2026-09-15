@@ -71,6 +71,61 @@ Current locus tags are retained as secondary annotation metadata.
 Input provenance and download details are documented in
 data/README.md.
 
+## Installation
+
+The OrgDb package is generated locally by the build pipeline and is not
+distributed through Bioconductor.
+
+After building the package, it can be installed from the generated package
+source directory using:
+
+```r
+install.packages(
+  "path/to/org.Cburnetii.eg.db",
+  repos = NULL,
+  type = "source"
+)
+````
+The installed package can then be loaded with:
+library(org.Cburnetii.eg.db)
+
+## Basic usage
+The package can be queried using AnnotationDbi.
+library(AnnotationDbi)
+library(org.Cburnetii.eg.db)
+
+keytypes(org.Cburnetii.eg.db)
+columns(org.Cburnetii.eg.db)
+
+select(
+  org.Cburnetii.eg.db,
+  keys = c("BL_example1", "BL_example2"),
+  keytype = "GID",
+  columns = c("GO", "ONTOLOGY")
+)
+
+## GO enrichment with clusterProfiler
+The custom OrgDb can be supplied directly to clusterProfiler::enrichGO():
+
+library(clusterProfiler)
+library(org.Cburnetii.eg.db)
+
+ego <- enrichGO(
+  gene = gene_ids,
+  universe = background_gene_ids,
+  OrgDb = org.Cburnetii.eg.db,
+  keyType = "GID",
+  ont = "BP",
+  pAdjustMethod = "BH",
+  pvalueCutoff = 0.05,
+  qvalueCutoff = 0.05,
+  readable = FALSE
+)
+
+
+
+
+
 ## Status
 
 The current pipeline has been successfully tested from annotation preparation
