@@ -53,6 +53,20 @@ Install and validate
         ↓
 Use in downstream enrichment analysis
 
+## Reproducible workflow
+
+The annotation package is built through a series of reproducible R scripts:
+
+1. `00_setup_environment.R` — installs the required R and Bioconductor dependencies.
+2. `01_prepare_annotation_data.R` — imports the genome and GO annotations and prepares the gene and GO mappings.
+3. `02_qc_checks.R` — evaluates identifier matching, GO annotation coverage, malformed identifiers, and duplicate mappings.
+4. `03_build_orgdb.R` — builds the custom OrgDb package using `AnnotationForge`.
+5. `04_install_and_validate_orgdb.R` — installs the generated package and validates its annotation interface.
+6. `05_clusterprofiler_smoke_test.R` — performs a functional `clusterProfiler::enrichGO()` smoke test.
+
+Project-specific paths and OrgDb metadata are defined in `00_config.R`.
+
+Generated files and package build artifacts are written to `output/` and are not tracked by Git.
 
 ## Input
 ## Reference annotation
