@@ -26,7 +26,7 @@ gene identifiers is planned.
 
 ## Repository structure
 
-```text
+````
 .
 ├── data/                      # input files and provenance documentation
 ├── output/                    # generated files (gitignored)
@@ -34,6 +34,7 @@ gene identifiers is planned.
 ├── .gitignore
 └── README.md
 
+````
 
 ## Workflow
 
@@ -71,11 +72,13 @@ data/README.md.
 
 ## Status
 
-This repository is currently being prepared as a reproducible public
-release of the OrgDb construction workflow.
+The current pipeline has been successfully tested from annotation preparation
+through OrgDb construction, installation, validation, and a clusterProfiler
+GO enrichment smoke test.
+
+The package is currently an initial development release (`0.1.0`).
 
 ## License
 
 A license will be added before the first public release.
 
-```text
