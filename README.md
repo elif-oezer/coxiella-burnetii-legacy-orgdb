@@ -1,12 +1,10 @@
 #org.Cburnetii.eg.db build pipeline
 
-This repository contains a reproducible workflow for building a 
-Bioconductor style "OrgDb" annotation package for *Coxiella burnetii*
-using genome annotation and Gene Ontology (GO') data associated with
-assembly `GCA_002094935.1 / ASM209493v1`.
+This repository contains a reproducible workflow for building a Bioconductor-style `OrgDb` annotation package for *Coxiella burnetii* using the **2017 dated genome annotation associated with assembly `GCA_002094935.1 / ASM209493v1`** and its corresponding Gene Ontology (GO) annotations.
 
-The resulting package can be used with Bioconductor tools such as 
-`clusterProfiler` for over-representation analysis (ORA) and gene set enrichment analysis (GSEA).
+This package is intended for datasets and analyses that use the **legacy gene identifier namespace associated with this annotation release**. It should not be assumed to be compatible with gene identifiers from newer *C. burnetii* genome annotations. A separate OrgDb package for the current annotation will be developed independently.
+
+The resulting package can be used with Bioconductor tools such as `clusterProfiler` for over-representation analysis (ORA) and gene set enrichment analysis (GSEA).
 
 ## Compatibility
 
